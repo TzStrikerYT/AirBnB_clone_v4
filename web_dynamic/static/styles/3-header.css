@@ -12,3 +12,11 @@ header .logo {
 .available {
     background-color: #ff545f;
 }
+
+div #api_status {
+    text-align: right;
+    border-radius: 40px;
+    align-items: center;
+    margin-right: 30px;
+    background-color: #cccccc;
+}
