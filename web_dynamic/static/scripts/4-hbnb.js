@@ -37,18 +37,13 @@ window.onload = function() {
   });
 
   //Search Places
-  $('button').click(() =>
+
+  //Default
   $.ajax({
     dataType: "json",
     url: 'http://0.0.0.0:5001/api/v1/places_search/',
-    data: JSON.stringify({ amenities: Object.keys(select) }),
+    data: "{}",
     success: function(data) {
-      //Get the list of the user for the places
-      // const listUsers = allUsers();
-      // console.log(listUsers);
-
-      //List the article and concat each element to append after
-      //let nameOwner = "";
       for (let i in data) {
 	let jinja = `<article>
           <div class="title_box">
@@ -56,17 +51,10 @@ window.onload = function() {
             <div class="price_by_night">` + data[i].price_by_night + `</div>
           </div>
           <div class="information">
-            <div class="max_guest">` + data[i].max_guest + `</div>
-            <div class="number_rooms">` + data[i].number_rooms + `</div>
-            <div class="number_bathrooms">` + data[i].number_bathrooms + `</div>
+            <div class="max_guest">` + data[i].max_guest + ` Guests` + `</div>
+            <div class="number_rooms">` + data[i].number_rooms + ` Rooms` + `</div>
+            <div class="number_bathrooms">` + data[i].number_bathrooms + ` Bathrooms` + `</div>
           </div>`;
-	//Put the user of the place
-	// for (let userKey in listUsers) {
-	//   console.log(listUsers);
-	//   if (listUsers[userKey].id == data[i].user_id)
-	//     nameOwner = `<div class="user"><b>Owner:</b>`+
-	//     listUsers[userKey].first_name + ` ` + listUsers[userKey].last_name + `</div>`;
-	// }
         let jinja2 = `<div class="description">` + data[i].description + `</div></article>`;
 	let lastJinja = jinja + jinja2;
 	$("SECTION.places").append(lastJinja);
@@ -74,17 +62,33 @@ window.onload = function() {
     },
     contentType: "application/json",
     type: "POST"
-  }));
+  });
+  //Filter by amenities
+  $('button').click(() => {
+    $("SECTION.places").empty();
+    $.ajax({
+      dataType: "json",
+      url: 'http://0.0.0.0:5001/api/v1/places_search/',
+      data: JSON.stringify({ amenities: Object.keys(select) }),
+      success: function(data) {
+	for (let i in data) {
+	  let jinja = `<article>
+          <div class="title_box">
+            <h2>` + data[i].name + `</h2>
+            <div class="price_by_night">` + data[i].price_by_night + `</div>
+          </div>
+          <div class="information">
+            <div class="max_guest">` + data[i].max_guest + ` Guests` + `</div>
+            <div class="number_rooms">` + data[i].number_rooms + ` Rooms` + `</div>
+            <div class="number_bathrooms">` + data[i].number_bathrooms + ` Bathrooms` + `</div>
+          </div>`;
+          let jinja2 = `<div class="description">` + data[i].description + `</div></article>`;
+	  let lastJinja = jinja + jinja2;
+	  $("SECTION.places").append(lastJinja);
+	}
+      },
+      contentType: "application/json",
+      type: "POST"
+    })
+  });
 }
-
-
-// function allUsers() {
-//   const urlUsers = 'http://0.0.0.0:5001/api/v1/users/';
-//   const Users = [];
-//   $.get(urlUsers, function(data){
-//     for (let usr in data) {
-//       Users.push(data[usr]);
-//     }
-//   });
-//   return Users;
-// }
