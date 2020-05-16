@@ -56,9 +56,9 @@ window.onload = function() {
             <div class="price_by_night">` + data[i].price_by_night + `</div>
           </div>
           <div class="information">
-            <div class="max_guest">` + data[i].max_guest + `</div>
-            <div class="number_rooms">` + data[i].number_rooms + `</div>
-            <div class="number_bathrooms">` + data[i].number_bathrooms + `</div>
+            <div class="max_guest">` + data[i].max_guest + ` Guests` + `</div>
+            <div class="number_rooms">` + data[i].number_rooms + ` Rooms` + `</div>
+            <div class="number_bathrooms">` + data[i].number_bathrooms + ` Bathrooms` + `</div>
           </div>`;
 	//Put the user of the place
 	// for (let userKey in listUsers) {
