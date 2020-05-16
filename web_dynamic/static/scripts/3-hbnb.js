@@ -17,10 +17,10 @@ window.onload = function() {
     }
     const val4 = $("DIV.amenities h4").html();
 
-    if (lista.length < 2 && val4.slice(val4.length - 3, val4.length) == "...") {
+    if (val4.slice(val4.length - 3, val4.length) == "..." && lista.length < 2) {
       $("DIV.amenities h4").text(lista);
     }
-    if (val4.length >= 28 && val4.slice(val4.length - 3, val4.length) != "..."){
+    else if (val4.length >= 20 && val4.slice(val4.length - 3, val4.length) != "..." && lista.length >= 2){
       print = val4 + "..."
       $("DIV.amenities h4").text(print);
     } else if (val4.slice(val4.length - 3, val4.length) != "..."){
