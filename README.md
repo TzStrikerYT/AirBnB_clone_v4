@@ -6,7 +6,7 @@
   >
 </p>
 
-## Description :house:
+### Description :house:
 
 Holbertonbnb is a complete full-stack web application, integrating a MySQL database and Flask RESTful API with a dynamic
 HTML5/CSS3/jQuery front-end.
@@ -43,7 +43,7 @@ This proyect was do it along 4 differents proyects. In each one we create a diff
   - [fabfile.py](./fabfile.py)
   - [setup_server.pp](./setup_server.pp)
   
-## Dependencies
+### Dependencies
 
 Application:
 
@@ -76,16 +76,16 @@ The console is the first segment of the AirBnB project at Holberton School that 
 * Update attributes of an object
 * Destroy an object
 
-## Environment
+#### Environment
 This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.4.3)
 
-## Installation
+#### Installation
 * Clone this repository: `git clone "https://github.com/alexaorrico/AirBnB_clone.git"`
 * Access AirBnb directory: `cd AirBnB_clone`
 * Run hbnb(interactively): `./console` and enter command
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
 
-## File Descriptions
+#### File Descriptions
 [console.py](console.py) - the console contains the entry point of the command interpreter. 
 List of commands this console current supports:
 * `EOF` - exits console 
@@ -98,7 +98,7 @@ List of commands this console current supports:
 * `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). 
 
 
-## Examples of use
+#### Examples of use
 ```
 vagrantAirBnB_clone$./console.py
 (hbnb) help
@@ -121,13 +121,13 @@ EOF  all  create  destroy  help  quit  show  update
 (hbnb) quit
 ```
 
-## Bugs
+#### Bugs
 No known bugs at this time.
 
 ## AirBnB Clone - Flask web application server with Jinja2
 HTML files for HolbertonBnB are rendered by this application server, built in Python Flask and using Jinja2.
 
-## File Descriptions
+#### File Descriptions
  [templates](./web_flask/templates): The HTML5 content for HolbertonBnB.
   * [templates/index.html](./web_flask/templates/index.html): The root page of HolbertonBnB.
 * [static](./web_flask/static): Static content included in [templates/index.html](./web_flask/templates/index.html).
@@ -135,35 +135,35 @@ HTML files for HolbertonBnB are rendered by this application server, built in Py
   * [static/scripts](./web_flask/templates/static/scripts): JavaScript scripts (uses jQuery).
   * [static/images](./web_flask/templates/static/styles): CSS3 stylesheets.
 
-## Examples of use :running:
+#### Examples of use :running:
 Assuming the above dependencies have been installed, the app server can be started using the following command:
 
 ```
 python3 web_flask.app
 ```
 
-## Bugs
+#### Bugs
 No known bugs at this time.
 
-# AirBnB Clone - RESTful Flask API
+## AirBnB Clone - RESTful Flask API
 The complete documentation for the API can be read using Swagger documentation - [bdbnb.site/apidocs](https://bdbnb.site/apidocs).
 
-## File Descriptions
+#### File Descriptions
 All file use the different endpoint inside de api/v1/views.
 
-## Examples of use :running:
+#### Examples of use :running:
 
 Assuming the above dependencies have been installed, the API can be started using the following command:
 ```
 python3 api.v1.app
 ```
-## Bugs
+#### Bugs
 No known bugs at this time.
 
-# AirBnB Clone - Automatic deployment
+## AirBnB Clone - Automatic deployment
 Fabric and Puppet scripts for automatically, remotely deploying HolbertonBnB.
 
-## Examples of use :running:
+#### Examples of use :running:
 * setup_server.pp: Puppet manifest that configures a web server for deployment of HolbertonBnB.
   * Usage: `sudo puppet apply setup_server.pp` (note that `sudo` privileges are required).
   * Ensures installation of Nginx, copies in an Nginx configuration file, and runs the service.
@@ -179,7 +179,7 @@ Fabric and Puppet scripts for automatically, remotely deploying HolbertonBnB.
     * `restart`: Restarts the WSGI apps.
     * `deploy --folder=STR`: All of the above for a given folder(s).
 
-## Bugs
+#### Bugs
 No known bugs at this time.
 
 ## Authors
